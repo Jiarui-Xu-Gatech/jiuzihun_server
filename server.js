@@ -30,7 +30,8 @@
 
 (function(){
 	var WebSocketServer=require('ws').Server;
-	var wss=new WebSocketServer({port:8080});
+	var port = process.env.PORT || 8080;
+	var wss=new WebSocketServer({port:port});
 	var bannedKeys=[];
 	var bannedIps=[];
 

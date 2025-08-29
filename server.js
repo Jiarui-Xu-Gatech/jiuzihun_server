@@ -35,7 +35,7 @@
 	var bannedKeys=[];
 	var bannedIps=[];
 
-	var rooms=[{},{},{},{},{},{}];
+	var rooms=[{},{},{},{},{},{},{},{},{}];
 	var events=[];
 	var clients={};
 	var messages={

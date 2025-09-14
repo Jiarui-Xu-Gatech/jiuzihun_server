@@ -36,7 +36,7 @@
 	var bannedIps=[];
 
 	// var rooms=[{},{},{},{},{},{},{},{},{}];
-	var rooms = Array.from({ length: 9 }, () => ({}));
+	var rooms = Array.from({ length: 99 }, () => ({}));
 	var events=[];
 	var clients={};
 	var messages={
@@ -273,7 +273,7 @@
 			var clientlist=util.getclientlist();
 			for(var i in clients){
 				if(!clients[i].room){
-					clients[i].sendl('updaterooms',roomlist,clientlist);
+					clients[i].sendl('updaterooms',roomlist,clientlist,0);
 				}
 			}
 		},

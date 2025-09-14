@@ -268,12 +268,16 @@
 			}
 			return clientlist;
 		},
+		getPage:function(){
+			return 0;
+		},
 		updaterooms:function(){
 			var roomlist=util.getroomlist();
 			var clientlist=util.getclientlist();
+			var page = util.getPage();
 			for(var i in clients){
 				if(!clients[i].room){
-					clients[i].sendl('updaterooms',roomlist,clientlist,0);
+					clients[i].sendl('updaterooms',roomlist,clientlist,page);
 				}
 			}
 		},
@@ -322,7 +326,7 @@
 		},2000);
 		ws.wsid=util.getid();
 		clients[ws.wsid]=ws;
-		ws.sendl('roomlist',util.getroomlist(),util.checkevents(),util.getclientlist(ws),ws.wsid);
+		ws.sendl('roomlist',util.getroomlist(),util.checkevents(),util.getclientlist(ws),ws.wsid,util.getPage());
 		ws.heartbeat=setInterval(function(){
 			if(ws.beat){
 				ws.close();

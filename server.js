@@ -269,7 +269,7 @@
 			return clientlist;
 		},
 		getPage:function(){
-			return 0;
+			return -1;
 		},
 		updaterooms:function(){
 			var roomlist=util.getroomlist();
